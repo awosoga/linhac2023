@@ -1,0 +1,185 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2707
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\colortbl;\red255\green255\blue255;}
+{\*\expandedcolortbl;;}
+\margl1440\margr1440\vieww10020\viewh11520\viewkind0
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+
+\f0\fs24 \cf0 List: {\field{\*\fldinst{HYPERLINK "https://www.theicegarden.com/2021/4/15/22374981/a-directory-of-womens-hockey-projects-from-big-data-cup-2021-analytics-otthac-stathletes"}}{\fldrslt https://www.theicegarden.com/2021/4/15/22374981/a-directory-of-womens-hockey-projects-from-big-data-cup-2021-analytics-otthac-stathletes}}\
+\
+\
+Identifying Player Archetypes in Women\'92s Hockey\
+- premise: Identifying different types of players\
+- inspiration: astrophysics research to identify groups of stars with clustering algorithms\
+- find similar instances of the methodology in other sports\
+- 2021 data didn\'92t have other players on the ice at a time\
+- filter out team effect using indexing\
+- PCA\
+- clustering algorithms\
+- elbow method and silhouette method to aid in decision making\
+- really in-depth and informed analysis\
+- application to coaches\
+- web app of player archetypes using a radar chart\
+\
+A Framework for Assessing Goal Scoring and Play Making Skill in the NWHL\
+- looking at hockey through the lens of opportunity, luck, and skill\
+- using xg to quantify a shooter\'92s skill and a passers passing ability\
+- created own xg model\
+- used glm\'92s to evaluate player effects relative to xg and player effects with respect to future xg as a result of their passes\
+- random forest for xg, use downsampling to account for the rarity of goals\
+- fixed effects and random effects, I don\'92 t understand those very well. GLMM\
+- gaussian distribution and stat knowledge allowed him to do some shortcuts\
+- application to line combinations \
+- inspiration from NFL big data bowl\
+\
+Quantifying offensive passing ability with expected primary assists\
+- came with a shiny app\
+- New Metric: xPA (expected primary assists)\
+- break down the problem into two parts: to calculate the likelihood of a pass leading to a goal we need to calculate the probability that a the pass is completed and then calculate the probability that the resulting shot goes in the net\
+- NFL inspiration\
+- xgboost for pass completion probability using time remaining, strength state, score differential, and classication of common types of passes\
+- made a new xg model\
+- AUC results \
+- using phantom shots to account for when someone made a pass but the shooter decided not to shoot. This can help quantify the added value of \'93the extra pass\'94\
+- giving context to a new stat definition \
+- used a sankey plot and a characteristic plot\
+- application: finding under appreciated players\
+\
+How Do We Get There: Quantifying Pass Types and Their Value\
+- identifying the value of player shots and movements, including the actions that occur before a potential assist\
+- new stat: Expected Attack Value (EAV) for every pass, movement, or shot based on how an action sets up future actions\
+- inspired by linear weights in baseball and expected threat (xT) in soccer\
+Movement score: from a pass or a carry without losing possession. Looks like a transition probability\
+- running a formula iteratively\
+- discrepancy between different stats shows that they are measuring and valuing different things  \
+- he did do specific player analysis\
+- common pass types\
+- Gaussian Mixture Model (for clustering pass types)\
+\
+The Pass is Right: An Analysis of Decision Making to Improve eScoring Chances in Women\'92s Hockey\
+- analyze key factors to improve in-game pass/shoot decisions to better capitalize on offensive opportunities \
+- win probability model\
+- pass completion probability (auc, good for imbalanced classification problems)\
+- expected goals (David sumpter\'92s method)\
+- expected pass/shot rate: predict an action a player might take at any point during a hockey game (xgboost)\
+- only looked at passes for decision-making evaluation \
+- 2 new metrics: Pass Risk, Pass Reward\
+- comparing average goals scored to xg\
+\
+Net Front Presents: A Guide to Getting the Most of your Trip to the Crease\
+- deflections \
+- comparing OHL to NWHL leagues\
+- using a log function for better results\
+- standardizing the data in the x,y coordinates\
+- application: using \'93micro-stats\'94 to find out which players are \'93specialists\'94\
+\
+Valuing Individual Contributing Events (V-ICE) in Hockey\
+- relative contributions of non-goal events in hockey\
+- New Stat: VAEP evaluates how individual actions contribute to an eventual expected goal (or prevent an eventual opponent\'92s expected goal)\
+- using a time-based window instead of an event-based window, based on intuition\
+- LightGBM with max xG in the 25 second window was the target\
+- xgboost with scale_pos_weight to better account for assigning goals than non-goals\
+- target of max expected goal output over the next n seconds (LightGBM) with MSE and same architecture as shot probability model\
+- application: evaluate individual players and teams as a whole, uncover strategic insights about a team\'92s style of play\
+- getting enough data to do stability analysis and other meta-checks\
+- tactics and tendency scouting, rating short direct and long indirect passes (since they contribute to scoring chances the most)\
+\
+Hot Routes: An analysis of power play entry paths\
+- evaluate common entry routes, \
+- claim that complex routes do not help teams enter the zone more\
+- dynamic time warping was used to account for possessions of different lengths\
+- used a hierarchical model with clustering\
+- restricted to successful carry-in rushes\
+- lots of outliers were present\
+- entry strategies could come as response to the defenders strategy\
+\
+Uitilizing decision Trees with Expected Goals to Understand High-Probability Scoring Chances in Women\'92s Hockey\
+- \'93just\'94 an xg model\
+- used logistic regression\
+\
+Passing Patterns, Passing Efficiency, and Expected Goals on the Power play\
+- focus on the types of passes that lead to high efficiency and effectiveness\
+- what types of passes and how many of those passes resulted in the best scoring opportunities\
+- isolated for power play data separate from even strength\
+- made an xg model\
+- did pass clustering\
+- looked at different types of passes that occurred before shots\
+- excluded shots directly off of rebounds\
+- I barely skimmed this one\
+\
+Projecting Win Probability in Women\'92s Hockey\
+- objective was to find the best way to measure a player\'92s contribution to a game\
+- drawing from basketball\'92s win probability added (WPA)\
+- they want to use it as a tool to measure efficiency\
+- adapted the soccer expected threat (xT) model to make a new metric called (nxT)\
+- SMOTE for class imbalance\
+- xgboost classification\
+- bayesian optimization from the Hyperopt package to optimize the F1-Score\
+\
+VAEP in Hockey to put a value on zone Entries\
+- draws from soccer\
+- didn\'92t understand dump and chase, which is a type of zone entry\
+- made an xg model, and then extended it to have an xg model for non-shot events\
+- used a grid search parameter estimator\
+- xgboost classifier\
+- analyzing the players who are best at zone entries\
+- carrying the puck into the zone is incredibly valuable\
+\
+Increasing Offensive Efficiency in the NCAA Women\'92s Ice Hockey\
+- used logistic regression\
+- used Synthetic Minority Oversampling Technique (SMOTE) to balance the data\
+- confusion matrix, recall, precision, f1-score, support, accuracy\
+- looked at the ROC curve\
+\
+How important are face-offs to possession in women\'92s hockey?\
+- old idea with novel data\
+- face-offs aren\'92t as important as they\'92re made out to be\
+- subject matter: no body checking puts an emphasis on puck possession and passing\
+- net shots after face-off wins\
+- isolated face-off wins that ended in a shot\
+- impact of face-offs in sustained pressure \
+- dealing with a small sample size\
+- looking at historical data to validate results and hypotheses\
+\
+Teamwork Makes the Dream Work - Determining Which Pass Types Create High Quality Chances in Women\'92s Hockey\
+- not all passes are created equally\
+- group passes into available clusters\
+- build an xg model\
+- develop a method of valuing individual passes in a given possession\
+- filtering just for 5 on 5 play\
+- k means clustering on different pass types\
+- inspired by soccer: xGChain and xGBuildup\
+- had to define their own possession metrics and make a possessionxG\
+- by their definition, a possession can only have 1 shot\
+- allocate a proportion of the possession value to each based based on how close they were to the shot\
+- removing shot assists to get a better idea \
+- team specific stats\
+\
+{\field{\*\fldinst{HYPERLINK "https://github.com/gregalytics/2021-Big-Data-Cup"}}{\fldrslt Evaluating the 2019-20 Erie Otters through Markov Models\
+}}- LOOKS COOL\
+- drew inspiration from soccer and football\
+- 5v5 \
+- defined 23 geographic zones, inspired from the blue jackets analytics conference\
+- goal contribution\
+{\field{\*\fldinst{HYPERLINK "https://github.com/ryurko/nflscrapR-data/blob/master/R/markov_model.R"}}{\fldrslt - drew off of Ron Yurko\'92s work\
+}}- soccer non-shot expected zone models\
+- improvement for geographic zones based on defensive pressure and other contextual information\
+- asked about stability and repeatability\
+- analyze the incremental value that a play adds to a goal\
+\
+{\field{\*\fldinst{HYPERLINK "https://github.com/brenkumi/BigDataCup2021"}}{\fldrslt Bayesian Space-Time Models for Expected Possession added Value}} (Won the Open Category)\
+- even strength possessions that begin with an entry and end with an exit or a whistle\
+- new metric: Possession Added Value (PAV)\
+- drew from: offensive sequences in hockey, xT, and a multi resolution stochastic process model for predicting basketball possession outcomes (basketball)\
+- THEY USED A MARKOV DECISION PROCESS to figure out how an offensive sequence develops \
+- they used INLA to estimate spatial distributions\
+- they made a bunch of simulations and got xg from them to get the value of a sequence at a moment in time: xPv\
+- findings were obvious but good\
+- dump ins as a zone entry are still positive\
+- a drawback is the lack of information on how the opposing team\'92s defensive structure influences a player\'92s decision-making\
+- the valuable area of ice decreases over time. Why?\
+- overview metric\
+- in depth player evaluation using their new metric\
+- allowed the maps to evolve with an AR1 process\
+- theirs is super complicated but incredibly cool\
+}
