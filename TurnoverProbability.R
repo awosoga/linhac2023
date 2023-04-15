@@ -3,6 +3,7 @@ library(magrittr)
 library(mlr)
 library(parallel)
 library(parallelMap)
+library(pROC)
 
 # This file creates an xgboost model for turnover probability on events that 
 # advance a play and do not result in an automatic end of possession
