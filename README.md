@@ -6,7 +6,7 @@ David Awosoga, University of Waterloo Data Science Graduate Student | [LinkedIn]
 
 Justin Cui, University of Toronto Engineering Science Undergraduate Student | [LinkedIn](https://www.linkedin.com/in/justin-cui-b7b654181/)
 
-Aujin Li, University of Toronto Industrial Engineering Graduate Student | [LinkedIn](https://www.linkedin.com/in/aujin-li/)
+Aujin Li, University of Toronto Industrial Engineering Undergraduate Student | [LinkedIn](https://www.linkedin.com/in/aujin-li/)
 
 Jaden Majumdar, University of Toronto Engineering Science Undergraduate Student | [LinkedIn](https://www.linkedin.com/in/jaden-majumdar-179a31263/)
 
