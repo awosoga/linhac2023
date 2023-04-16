@@ -280,9 +280,9 @@ timeachecks, timebchecks, timecchecks = getmean(checks, 'timeafter', True, 'chec
 #use getmean on timeafter protections
 timeaprotections, timebprotections, timecprotections = getmean(protections, 'timeafter', True, 'protections', True)
 #use getmean on deltaxg20s checks
-deltaachecks, deltabchecks, deltacchecks = getmean(checks, 'DeltaXg20s', False, 'checks', True)
+deltaachecks, deltabchecks, deltacchecks = getmean(checks, 'DeltaXg20s', True, 'checks', False)
 #use getmean on deltaxg20s Protections
-deltaaprotections, deltabprotections, deltacprotections = getmean(protections, 'DeltaXg20s', False, 'protections', True)
+deltaaprotections, deltabprotections, deltacprotections = getmean(protections, 'DeltaXg20s', True, 'protections', False)
 
 #Combine dataframes into both
 checks.rename(columns = {'issbody':'isbody'}, inplace = True)
@@ -291,22 +291,22 @@ protections.drop('issuccessful', axis = 1, inplace = True)
 both = pd.concat([checks,protections])
 both.reset_index(inplace = True)
 
-deltaa, deltab, deltac = getmean(both, 'DeltaXg20s', False, 'both', True)
+deltaa, deltab, deltac = getmean(both, 'DeltaXg20s', True, 'both', False)
 
 #Print graphs of seperate and combined data (figures 1 and 2 respectively)
 plt.figure(1)
-plt.bar((deltaachecks[0:2] + deltaaprotections[0:2] + deltaachecks[2:4] + deltaaprotections[2:4]), (deltabchecks[0:2] + deltabprotections[0:2] + deltabchecks[2:4] + deltabprotections[2:4] ))
+plt.bar(["Cop\nBody Check","No Cop\n Body Check", "Cop\nBody Protection","No Cop\nBody Protection","Cop\nStick Check","No Cop\nStick Check","Cop\nDeke Protection","No Cop\nDeke Protection"], (deltabchecks[0:2] + deltabprotections[0:2] + deltabchecks[2:4] + deltabprotections[2:4]),color = ['purple','orange','purple','orange','purple','orange','purple','orange'])
 plt.xlabel("Event")
 plt.ylabel("Mean DeltaXg45s")
 plt.title("VICE Results Separated")
-plt.errorbar((deltaachecks[0:2] + deltaaprotections[0:2] + deltaachecks[2:4] + deltaaprotections[2:4]), (deltabchecks[0:2] + deltabprotections[0:2] + deltabchecks[2:4] + deltabprotections[2:4] ), yerr= (deltacchecks[0:2] + deltacprotections[0:2] + deltacchecks[2:4] + deltacprotections[2:4]), fmt="o", color="r")
+plt.errorbar(["Cop\nBody Check","No Cop\n Body Check", "Cop\nBody Protection","No Cop\nBody Protection","Cop\nStick Check","No Cop\nStick Check","Cop\nDeke Protection","No Cop\nDeke Protection"], (deltabchecks[0:2] + deltabprotections[0:2] + deltabchecks[2:4] + deltabprotections[2:4] ), yerr= (deltacchecks[0:2] + deltacprotections[0:2] + deltacchecks[2:4] + deltacprotections[2:4]), fmt="o", color="r")
 
 plt.figure(2)
-plt.bar((deltaa),(deltab))
+plt.bar(["Change In Possession\nBody Combined", "No Change In Possession\nBody Combined", "Change In Possession\n Stick and Deke Combined","No Change In Possession\nStick and Deke Combined"],(deltab),color = ['purple','orange','purple','orange'])
 plt.xlabel("Event")
 plt.ylabel("Mean DeltaXg45s")
 plt.title("VICE Results Combined")
-plt.errorbar((deltaa),(deltab), yerr = deltac ,fmt="o", color="r")
+plt.errorbar(["Change In Possession\nBody Combined", "No Change In Possession\nBody Combined", "Change In Possession\n Stick and Deke Combined","No Change In Possession\nStick and Deke Combined"],(deltab), yerr = deltac ,fmt="o", color="r")
 
 print("Done DeltaXg20s Graphs")
 plt.show()
