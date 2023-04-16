@@ -1,7 +1,5 @@
 # Comparing Defensive Pressures Using Possession Retention Probability and Expected Goals
 
-### University of Toronto Sports Analytics Student Group
-
 **David Awosoga**, University of Waterloo Data Science Graduate Student | [LinkedIn](https://www.linkedin.com/in/david-awosoga-0778b91b3/)
 
 **Justin Cui**, University of Toronto Engineering Science Undergraduate Student | [LinkedIn](https://www.linkedin.com/in/justin-cui-b7b654181/)
