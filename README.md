@@ -10,4 +10,4 @@
 
 **Junhao Wang**, University of Toronto Engineering Science Undergraduate Student | [LinkedIn](https://www.linkedin.com/in/junhao-wang-4ba488200/)
 
-### Submission for the 2023 Linköping Hockey Analytics Conference - LINHAC 2023 Student Competition
+### Submission for the 2023 Linköping Hockey Analytics Conference Student Competition
