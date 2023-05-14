@@ -249,7 +249,7 @@ shotprob.to_excel(writer)
 
 print("Done ShotProb")
 #Go through each period
-for period in period
+for period in period:
     i = 0
     #The commented out code doesn't work the way I want it to, but I left it here incase I can make it work later.
     '''
